@@ -1,32 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using Wallet;
+using WalletEhanced;
 public class WalletMain
 {
-    private static WalletConsoleInterface interfaces = new();
+    
     public static void Main(String[] args)
     {
-        interfaces.InitializeWallet();
-        while (true)
-        {
-            switch (interfaces.MainMenu())
-            {
-                case 0:
-                    interfaces.History();
-                    return;
-                case 1:
-                    interfaces.SpendMoneyInterface();
-                    continue;
-                case 2:
-                    interfaces.AddMoneyInterface();
-                    continue;
-                case 3:
-                    interfaces.ManipulateWalletBudgets();
-                    continue;
-                case 4:
-                    interfaces.History();
-                    continue;
-            }
-        }
+        Console.WriteLine("Inital money in your wallet\n");
+        int initialValue;
+        if (!int.TryParse(Console.ReadLine(), out initialValue)) { }
+        Console.WriteLine("Your CIN if you have one\n");
+        string cin = Console.ReadLine();
+        Console.WriteLine("You driver licence if you have one\n");
+        string driverLicence = Console.ReadLine();
+        Wallet portefeuille = new(initialValue, cin, driverLicence);
+        portefeuille.Launch();
     }
 }
