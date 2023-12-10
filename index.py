@@ -73,13 +73,13 @@ class Wallet:
 
     def inventary(self):
         result = f"Money: {self.money}\n"
-        result += f"CIN: {'no CIN' if self.cin is None else f'{self.cin.id} {"in" if self.cin.is_in else "not in"} the wallet'}\n"
+        result += f"CIN: {'no CIN' if self.cin is None else f'{self.cin.id}  the wallet'}\n"
         result += "Bank cards:\n" + (
             "\n".join([f"   {card.name} {'is' if card.status else 'is not'} in the wallet" for card in self.banque_card])
             if self.banque_card
             else "   no bank cards"
         ) + "\n"
-        result += f"Driver licence: {'no driver licence' if self.driver_licence is None else f'{self.driver_licence.id} {"in" if self.driver_licence.is_in else "not in"} the wallet'}\n"
+        result += f"Driver licence: {'no driver licence' if self.driver_licence is None else f'{self.driver_licence.id} the wallet'}\n"
         result += f"Visite card: {self.visite_card}\n"
         result += "Photos:\n" + (
             "\n".join([f"   {photo.name} {'is' if photo.status else 'is not'} in the wallet" for photo in self.photos])
@@ -211,7 +211,9 @@ class Photo:
         self.name = name
         self.status = status
 
+initialMoney = int(input("how much do you want your initial money ?\n"))
+cin = input("what is your cin number if you have one\n")
+driver = input("what is your driver card Id if you have one\n")
+wallet = Wallet(100, "123456", "driver123")
+wallet.launch()
 
-if __name__ == "__main__":
-    wallet = Wallet(100, "123456", "driver123")
-    wallet.launch()
