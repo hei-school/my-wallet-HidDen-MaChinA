@@ -10,6 +10,9 @@
     go to the directory and run this command "javac .\src\com\devoir\walletJava\*.java"
     and then you can run it "java .\src\com\devoir\walletJava\Wallet.java"
 # Csharp
+   you need to install .Net SDK in order to make it work : https://dotnet.microsoft.com/download
+    then go to the file directory, and run
+- "dotnet run"
 # Python
     just go to the folder and run
 - "python index.js"
