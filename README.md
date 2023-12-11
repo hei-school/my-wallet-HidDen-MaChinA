@@ -11,3 +11,5 @@
     and then you can run it "java .\src\com\devoir\walletJava\Wallet.java"
 # Csharp
 # Python
+    just go to the folder and run
+- "python index.js"
